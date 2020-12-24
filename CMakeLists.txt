@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(gazebo_ros_battery)
+add_compile_options(-std=c++11)
 
   find_package(catkin REQUIRED COMPONENTS
     gazebo_dev
@@ -11,6 +12,7 @@ project(gazebo_ros_battery)
     sensor_msgs
     rosconsole
     std_msgs
+    gazebo_plugins
   )
 
   find_package(Boost REQUIRED COMPONENTS thread)

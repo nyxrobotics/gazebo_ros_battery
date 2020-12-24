@@ -73,7 +73,7 @@ void GazeboRosBattery::Load ( physics::ModelPtr _parent, sdf::ElementPtr _sdf )
 		battery_state_.capacity = design_capacity_;
 		// battery_state_.capacity   = last_full_capacity_;
 		battery_state_.present = true;
-		battery_state_.temperature = temperature_ = design_temperature_;
+		// battery_state_.temperature = temperature_ = design_temperature_;
 
 		// start
 		if ( this->update_rate_ > 0.0 ) this->update_period_ = 1.0 / this->update_rate_; else this->update_period_ = 0.0;
@@ -242,7 +242,7 @@ void GazeboRosBattery::UpdateChild() {
 				battery_state_.current    = current_lpf_;
 				battery_state_.charge     = charge_;
 				battery_state_.percentage = (charge_/design_capacity_)*100;
-				battery_state_.temperature = temperature_;
+				// battery_state_.temperature = temperature_;
 				battery_state_publisher_.publish( battery_state_ );
 				std_msgs::Float32 battery_voltage_;
 				battery_voltage_.data = voltage_;
